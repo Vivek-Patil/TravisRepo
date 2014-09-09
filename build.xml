@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project name="Bootcamp" basedir="./Bootcamp" default="build">
+    <property name="src.dir" value="src"/>
+    <property name="test.dir" value="tests"/>
+    <property name="build.dir" value="${src.dir}/classes"/>
+    <property name="buildtests.dir" value="${test.dir}/classes"/>
+    <path id="master-classpath">
+        <pathelement path="${src.dir}"/>
+        <pathelement path="${build.dir}"/>
+        <pathelement path="${test.dir}"/>
+        <pathelement path="${buildtests.dir}"/>
+        <fileset dir="/Applications/IntelliJ IDEA 13.app/lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <target name="build" description="Compile source tree java files">
+        <mkdir dir="${build.dir}"/>
+        <javac destdir="${build.dir}" source="1.5" target="1.5">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+    </target>
+    <target name="tests" description="Compile source tree java files">
+        <mkdir dir="${buildtests.dir}"/>
+        <javac destdir="${buildtests.dir}" source="1.5" target="1.5">
+            <classpath refid="master-classpath"/>
+            <src path="${test.dir}"/>
+        </javac>
+    </target>
+    <target name="test" depends="tests" description="Running Tests From Ur Given Directory">
+        <junit>
+            <formatter type="plain" usefile="false"/>
+            <formatter type="plain"/>
+            <classpath refid="master-classpath"/>
+            <batchtest>
+                <fileset dir="${test.dir}">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+</project>
