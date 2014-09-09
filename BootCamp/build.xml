@@ -27,7 +27,7 @@
             <src path="${test.dir}"/>
         </javac>
     </target>
-    <target name="junit" depends="tests" description="Running Tests From Ur Given Directory">
+    <target name="test" depends="tests" description="Running Tests From Ur Given Directory">
         <junit>
             <formatter type="plain" usefile="false"/>
             <formatter type="plain"/>
