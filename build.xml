@@ -6,7 +6,7 @@
     <property name="junit" location="lib/junit.jar"/>
     <property name="buildtests.dir" value="${test.dir}/classes"/>
     <path id="master-classpath">
-        <pathelement location="${junit}" />
+        <pathelement path="${junit}" />
         <pathelement path="${src.dir}"/>
         <pathelement path="${build.dir}"/>
         <pathelement path="${test.dir}"/>
