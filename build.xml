@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Bootcamp" basedir="./Bootcamp" default="build">
+<project name="Bootcamp" basedir="./BootCamp" default="build">
     <property name="src.dir" value="src"/>
     <property name="test.dir" value="tests"/>
     <property name="build.dir" value="${src.dir}/classes"/>
@@ -9,9 +9,6 @@
         <pathelement path="${build.dir}"/>
         <pathelement path="${test.dir}"/>
         <pathelement path="${buildtests.dir}"/>
-        <fileset dir="/Applications/IntelliJ IDEA 13.app/lib">
-            <include name="*.jar"/>
-        </fileset>
     </path>
     <target name="build" description="Compile source tree java files">
         <mkdir dir="${build.dir}"/>
