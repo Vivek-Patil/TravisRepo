@@ -3,12 +3,15 @@
     <property name="src.dir" value="src"/>
     <property name="test.dir" value="tests"/>
     <property name="build.dir" value="${src.dir}/classes"/>
+    <property name="junit" location="lib/junit.jar"/>
     <property name="buildtests.dir" value="${test.dir}/classes"/>
     <path id="master-classpath">
+        <pathelement location="${junit}" />
         <pathelement path="${src.dir}"/>
         <pathelement path="${build.dir}"/>
         <pathelement path="${test.dir}"/>
         <pathelement path="${buildtests.dir}"/>
+
     </path>
     <target name="build" description="Compile source tree java files">
         <mkdir dir="${build.dir}"/>
